@@ -10,18 +10,18 @@ public class n2577 {
         sc.close();
         int result = A*B*C;
         String toStr = Integer.toString(result);
-        System.out.print(result);
+//        System.out.println(toStr);
+//        System.out.println(toStr.length());
 
-        for(int i=0; i<toStr.length(); i++){
+        for(int j=0; j<10; j++) {
             int count = 0;
-            for(int j=0; j<10; j++){
-                if(toStr.charAt(i) == j){
-                    count += 1;
-                    System.out.print(toStr.charAt(i));
+            for (int i = 0; i < toStr.length(); i++) {
+                //            System.out.println(toStr.charAt(i));
+                if (j == Integer.parseInt(String.valueOf(toStr.charAt(i)))) {
+                    count++;
                 }
-//                System.out.println(count);
             }
+            System.out.println(count);
         }
-
     }
 }
