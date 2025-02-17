@@ -10,32 +10,33 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int[] length = new int[N-1];
-        int[] price = new int[N];
+        long[] length = new long[N-1];
+        long[] price = new long[N];
 
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         // length안에 넣기
         for (int i = 0; i < N-1; i++) {
-            length[i] = Integer.parseInt(st.nextToken());
+            length[i] = Long.parseLong(st.nextToken());
 //            System.out.println(length[i]);
         }
 
         st = new StringTokenizer(br.readLine()," ");
         for (int i = 0; i < N; i++) {
-            price[i] = Integer.parseInt(st.nextToken());
+            price[i] = Long.parseLong(st.nextToken());
 //            System.out.println(price[i]);
         }
 
         // 최초 price의 값을 min에 넣고 뒤의 값들과 비교해서 작으면 변경
-        int min = price[0];
-        int total = 0;
+        long min = price[0];
+        long total = 0;
 
         for (int i = 0; i < N-1; i++) {
-            total += min * length[i];
-            if (price[i+1] < min) {
-                min = price[i+1];
+
+            if (price[i] < min) {
+                min = price[i];
             }
+            total += (min * length[i]);
         }
         System.out.println(total);
 
